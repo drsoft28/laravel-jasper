@@ -1,5 +1,5 @@
 {
-    "name": "Drsoft/laraveljasper",
+    "name": "drsoft/laraveljasper",
     "description": "A Laravel report generator",
     "type": "library",
     "license": ["MIT"],
