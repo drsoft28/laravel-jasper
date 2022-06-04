@@ -1,0 +1,8 @@
+version: '2'
+services:
+  php:
+    image: drsoft/laraveljasper
+    container_name: laraveljasper
+    volumes:
+      - .:/var/www/app
+    tty: true

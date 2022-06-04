@@ -1,0 +1,58 @@
+{
+    "name": "Drsoft/laraveljasper",
+    "description": "A Laravel report generator",
+    "type": "library",
+    "license": ["MIT"],
+    "keywords": [
+        "reports",
+        "laravel-reports",
+        "pdf"
+    ],
+    "authors": [{
+        "name": "Rabie85",
+        "email": "dif.rabie@gmail.com",
+        "role": "lead"
+    }],
+    "minimum-stability": "dev",
+    "require": {
+        "php": "^7.4|^8.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8.4|^9.4",
+        "php-coveralls/php-coveralls": "^2.2",
+        "squizlabs/php_codesniffer": "*",
+        "phpstan/phpstan": "^0.12.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Drsoft\\LaravelJasper\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Drsoft\\LaravelJasper\\Test\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Drsoft\\LaravelJasper\\ServiceProvider"
+            ],
+            "aliases": {
+                "LaravelJasper": "Drsoft\\LaravelJasper\\Facades\\LaravelJasper"
+            }
+        }
+    },
+    "scripts": {
+        "phpcs": "phpcs --standard=PSR12 -n src",
+        "phpstan": "phpstan analyse src --level 0",
+        "phpcbf": "phpcbf --standard=PSR12 -n src",
+        "unit": "phpunit --coverage-clover ./tests/log/clover.xml --colors=always",
+        "testdox": "phpunit --testdox",
+        "test": [
+            "@phpcs",
+            "@phpstan",
+            "@unit"
+        ]
+    }
+}
